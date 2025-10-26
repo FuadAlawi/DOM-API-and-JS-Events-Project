@@ -1,0 +1,113 @@
+* { box-sizing: border-box; }
+
+:root {
+  --bg: #f4f4f4;
+  --text: #333333;
+  --muted: #666666;
+  --border: #dddddd;
+  --card: #ffffff;
+  --accent: #2563eb;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 24px 0 48px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+h1 { margin: 0; font-size: 1.6rem; }
+
+#dark-mode-toggle {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  cursor: pointer;
+}
+
+.table-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0 20px;
+}
+
+#search, #team-filter {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#search { width: min(320px, 100%); }
+#team-filter { width: 220px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: middle;
+}
+
+thead th { background: #fafafa; font-weight: 700; }
+
+tbody tr:hover { background: #fafafa; }
+
+.th-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.sort-btn {
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 0.9em;
+  line-height: 1;
+  padding: 4px 6px;
+  border-radius: 6px;
+  color: var(--text);
+}
+
+.sort-btn:hover { border-color: var(--border); }
+.sort-btn.active.asc::after { content: " ↑"; color: var(--accent); }
+.sort-btn.active.desc::after { content: " ↓"; color: var(--accent); }
+.sort-btn.active { color: var(--accent); }
+
+.dark-mode {
+  --bg: #0b0f14;
+  --text: #e8eaed;
+  --muted: #9aa0a6;
+  --border: #27313a;
+  --card: #0f141a;
+  --accent: #60a5fa;
+}
+
+.dark-mode thead th { background: #121a21; }
+.dark-mode tbody tr:hover { background: #121a21; }
